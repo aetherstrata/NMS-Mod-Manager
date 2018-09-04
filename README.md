@@ -1,5 +1,5 @@
 # NMS-Mod-Manager
-A simple mod manager for No Man's Sky that allows you to manage and backup mods easily without having to handle files manually.
+A simple mod manager for No Man's Sky that allows you to manage and backup mods easily without having to handle files manually.<br/>
 ![SCreenshot](https://deframet.plsfk.me/sYoEBUx.png)
 
 ## You can find a guide [here](https://github.com/deframet/NMS-Mod-Manager/wiki)
