@@ -13,5 +13,6 @@ namespace nms_mod_manager
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
