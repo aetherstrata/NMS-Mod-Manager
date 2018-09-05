@@ -1,10 +1,11 @@
 # NMS-Mod-Manager
-A simple mod manager for No Man's Sky that allows you to manage and backup mods easily without having to handle files manually.
+A simple mod manager for No Man's Sky that allows you to manage and backup mods easily without having to handle files manually.<br/>
+![SCreenshot](https://deframet.plsfk.me/sYoEBUx.png)
 
 ## You can find a guide [here](https://github.com/deframet/NMS-Mod-Manager/wiki)
 
 ## License
-Copyright © 2013-2018 deframet
+Copyright © 2018 deframet
 
 Licensed under the GNU General Public License, Version 3.0 (the "License"); you may not use this program except in compliance with the License. You may obtain a copy of the License at https://www.gnu.org/licenses/gpl-3.0.
 
