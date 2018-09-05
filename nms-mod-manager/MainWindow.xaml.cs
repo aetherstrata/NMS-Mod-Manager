@@ -106,8 +106,8 @@ namespace nms_mod_manager
                 FileInfo[] enableFiles = enableDir.GetFiles("*.pak");
                 foreach (FileInfo file in enableFiles)
                 {
-                    Console.WriteLine($"{@file.FullName} has been detected!");
                     enableList.Items.Add(file.Name);
+                    Console.WriteLine($"{@file.FullName} has been detected!");
                 }
             }
         }
@@ -287,6 +287,18 @@ namespace nms_mod_manager
                 }
                 RefreshList(2);
             }
+        }
+
+        private void DeleteShaders(object sender, RoutedEventArgs e)
+        {
+            DirectoryInfo enableDir = new DirectoryInfo(path + "GAMEDATA\\SHADERCACHE");
+            FileInfo[] enableFiles = enableDir.GetFiles();
+            foreach (FileInfo file in enableFiles)
+            {
+                File.Delete(file.FullName);
+                Console.WriteLine($"{@file.FullName} has been deleted!");
+            }
+            Dialog("SHADERCACHE has been deleted.", true);
         }
     }
 }

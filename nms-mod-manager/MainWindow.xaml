@@ -38,5 +38,6 @@
         <Label Content="Enabled mods" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="1,189,0,0" Grid.Row="3" VerticalAlignment="Top" Width="155" Foreground="#FFDDDDDD" Grid.ColumnSpan="2"/>
         <Label Content="Available Mods" Grid.Column="1" Grid.Row="2" Foreground="#FFDDDDDD" Height="24" VerticalAlignment="Top"/>
         <ListView x:Name="enableList" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" Width="763" BorderThickness="5" BorderBrush="#FF333333" Foreground="#FFB7494E" Background="#FF3F3F3F" Margin="0,218,0,10" Grid.ColumnSpan="9"/>
+        <Button Style="{StaticResource betterButton}" Content="Delete SHADERCACHE" Click="DeleteShaders" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Grid.Column="3" Grid.Row="3" Margin="0,190,0,0" Height="24" Width="155" VerticalAlignment="Top" HorizontalAlignment="Left"/>
     </Grid>
 </Window>
