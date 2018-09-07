@@ -5,39 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:nms_mod_manager"
         mc:Ignorable="d"
-        Title="NMS Mod Manager" Height="546" Width="800" ResizeMode="CanMinimize" Background="#3f3f3f">
+        Title="NMS Mod Manager" Height="546" Width="800" ResizeMode="CanResizeWithGrip" Background="#3f3f3f">
     <Grid Height="517" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="792">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="24"/>
             <RowDefinition Height="Auto" MinHeight="24"/>
-            <RowDefinition Height="Auto" MinHeight="448"/>
+            <RowDefinition Height="202"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="203"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="154*"/>
-            <ColumnDefinition Width="11*"/>
-            <ColumnDefinition Width="154*"/>
-            <ColumnDefinition Width="9*"/>
-            <ColumnDefinition Width="155*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="154*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="102*"/>
-            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        <ListView Foreground="#FFA500" x:Name="modList" Grid.Column="1" HorizontalAlignment="Left" Height="185" Grid.Row="3" VerticalAlignment="Top" Width="761" BorderThickness="5" BorderBrush="#FF333333" Background="{x:Null}" Grid.ColumnSpan="9" DragEnter="ModEnter" Drop="ModDrop"/>
+        <ListView Foreground="#FFA500" x:Name="modList" Grid.Column="1" Grid.Row="3" BorderThickness="5" BorderBrush="#FF333333" Background="{x:Null}" Grid.ColumnSpan="9" DragEnter="ModEnter" Drop="ModDrop"/>
         <Button Style="{StaticResource betterButton}" Content="Start No Man's Sky" Click="StartNMS" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Grid.Column="1" Grid.Row="1" Margin="0" Height="24" Width="155" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Button Style="{StaticResource betterButton}" Content="Disable Mods" HorizontalAlignment="Left" Height="24" Grid.Row="1" Width="155" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Margin="0" Click="Disable" Grid.Column="7" VerticalAlignment="Top"/>
         <Button Style="{StaticResource betterButton}" Content="Enable Mods" Grid.Column="5" HorizontalAlignment="Left" Height="24" Grid.Row="1" VerticalAlignment="Top" Width="156" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Margin="0" Click="Enable"/>
         <Button Style="{StaticResource betterButton}" Content="Refresh" HorizontalAlignment="Left" Height="24" Grid.Row="1" VerticalAlignment="Top" Width="155" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Margin="0" Click="Refresh" Grid.Column="3"/>
-        <Button Style="{StaticResource betterButton}" Content="Enable" HorizontalAlignment="Left" Height="24" Grid.Row="3" VerticalAlignment="Top" Width="156" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Margin="0,190,0,0" Click="EnableSelected" Grid.Column="5"/>
-        <Button Style="{StaticResource betterButton}" Content="Disable" Height="24" Grid.Row="3" VerticalAlignment="Top" Width="Auto" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Margin="0,190,0,0" Click="DisableSelected" Grid.Column="7"/>
+        <Button Style="{StaticResource betterButton}" Content="Enable" HorizontalAlignment="Left" Height="Auto" Grid.Row="4" Width="156" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Margin="0,5" Click="EnableSelected" Grid.Column="5"/>
+        <Button Style="{StaticResource betterButton}" Content="Disable" Height="Auto" Grid.Row="4" Width="Auto" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Margin="0,5" Click="DisableSelected" Grid.Column="7"/>
         <Label Content="Status:" Grid.Column="9" Height="24" Grid.Row="1" VerticalAlignment="Top" Foreground="#FFDDDDDD" RenderTransformOrigin="0.5,0.5" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="47"/>
-        <Label x:Name="modStatus"  Content="" Grid.Column="9" HorizontalAlignment="Left" Height="24" Grid.Row="1" VerticalAlignment="Top" Width="63" Margin="39,0,0,0"/>
-        <Label Content="Enabled mods" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="1,189,0,0" Grid.Row="3" VerticalAlignment="Top" Width="155" Foreground="#FFDDDDDD" Grid.ColumnSpan="2"/>
+        <Label x:Name="modStatus"  Content="" Grid.Column="9" HorizontalAlignment="Left" Height="21" Grid.Row="1" VerticalAlignment="Top" Width="63" Margin="39,3,0,0"/>
+        <Label Content="Enabled mods" Grid.Column="1" Margin="1,10,0,0" Grid.Row="4" Foreground="#FFDDDDDD"/>
         <Label Content="Available Mods" Grid.Column="1" Grid.Row="2" Foreground="#FFDDDDDD" Height="24" VerticalAlignment="Top"/>
-        <ListView x:Name="enableList" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" Width="763" BorderThickness="5" BorderBrush="#FF333333" Foreground="#FFB7494E" Background="#FF3F3F3F" Margin="0,218,0,10" Grid.ColumnSpan="9"/>
-        <Button Style="{StaticResource betterButton}" Content="Delete SHADERCACHE" Click="DeleteShaders" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Grid.Column="3" Grid.Row="3" Margin="0,190,0,0" Height="24" Width="155" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <ListView x:Name="enableList" Grid.Column="1" Grid.Row="5" BorderThickness="5" BorderBrush="#FF333333" Foreground="#FFB7494E" Background="#FF3F3F3F" Grid.ColumnSpan="9"/>
+        <Button Style="{StaticResource betterButton}" Content="Delete SHADERCACHE" Click="DeleteShaders" BorderBrush="#FF333333" Background="#FF333333" Foreground="#FFDDDDDD" Grid.Column="3" Grid.Row="4" Margin="0,5,0,4" Height="Auto" Width="Auto"/>
     </Grid>
 </Window>
