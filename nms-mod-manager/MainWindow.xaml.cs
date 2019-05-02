@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows;
 using System.IO;
+using System.Windows;
 
 namespace nms_mod_manager
 {
@@ -51,15 +51,18 @@ namespace nms_mod_manager
             if (fs.FolderCheck() == 3)
             {
                 Dialog("Modfiles have been copied to the 'mods' folder.", owner);
-            } else
+            }
+            else
             if (fs.FolderCheck() == 1)
             {
                 Dialog("Mods detected successfully.", owner);
-            } else
+            }
+            else
             if (fs.FolderCheck() == 2)
             {
                 ask.Dialog("Lock detected! Do you want\nto delete 'disablemods.txt'?");
-            } else
+            }
+            else
             if (fs.FolderCheck() == 0)
             {
                 Dialog("This is not a valid\nNo Man's Sky installation!", owner);
@@ -142,31 +145,38 @@ namespace nms_mod_manager
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 // Note that you can have more than one file.
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                string[] files = (string[]) e.Data.GetData(DataFormats.FileDrop);
                 foreach (string file in files)
                 {
-                    string fileName = Path.GetFileName(file);
-                    try
+                    if (Path.GetExtension(file) == ".pak")
                     {
-                        File.Copy(file, $"{path}mods\\{fileName}");
-                        Dialog($"{fileName} has been imported.", true);
+                        string fileName = Path.GetFileName(file);
+                        try
+                        {
+                            File.Copy(file, $"{path}mods\\{fileName}");
+                            Dialog($"{fileName} has been imported.", true);
+                        }
+                        catch (IOException)
+                        {
+                            if (File.Exists(file))
+                            {
+                                Dialog($"{fileName} is already in the mods folder!", true);
+                            }
+                            else
+                            {
+                                Dialog($"Failed to copy {fileName}!", true);
+                            }
+                        }
                     }
-                    catch (IOException)
+                    else
                     {
-                        if (File.Exists(file))
-                        {
-                            Dialog($"{fileName} is already in the mods folder!", true);
-                        }
-                        else
-                        {
-                            Dialog($"Failed to copy {fileName}!", true);
-                        }
+                        Dialog("Unknown file!", true);
                     }
                 }
                 RefreshList(1);
             }
         }
-        
+
         private void Enable(object sender, RoutedEventArgs e)
         {
             if (File.Exists(disablemods) == true)
@@ -186,13 +196,13 @@ namespace nms_mod_manager
             }
         }
 
-        
+
         private void Disable(object sender, RoutedEventArgs e)
         {
             if (File.Exists(disablemods) == false)
             {
                 try
-                { 
+                {
                     File.Create(disablemods);
 
                     modStatus.Foreground = cc.Color("#FFA500");
@@ -205,7 +215,7 @@ namespace nms_mod_manager
                 }
             }
         }
-        
+
         private void Refresh(object sender, RoutedEventArgs e)
         {
             //Rescan folders
